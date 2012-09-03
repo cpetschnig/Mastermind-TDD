@@ -3,3 +3,5 @@
 $ rails new Mastermind -T -O
 
 $ rails generate rspec:install
+
+$ bundle exec guard init
