@@ -2,3 +2,4 @@
 
 $ rails new Mastermind -T -O
 
+$ rails generate rspec:install
