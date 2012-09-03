@@ -1,0 +1,4 @@
+== TDD Workshop: Mastermind
+
+$ rails new Mastermind -T -O
+
