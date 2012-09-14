@@ -1,0 +1,37 @@
+<table>
+  <tbody>
+  <% @bets.each do |bet| %>
+    <tr>
+      <td><%= bet[0] %></td>
+      <td><%= bet[1] %></td>
+      <td><%= bet[2] %></td>
+      <td><%= bet[3] %></td>
+      <td><%= @game.make_bet(bet) %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<% if @bets.present? && @game.make_bet(@bets.last) == [4,0] %>
+  <h2>You won!</h2>
+  <%= link_to "Again", reset_path, :method => :delete %>
+<% else %>
+
+<%= form_tag bet_path do %>
+
+  <table>
+    <tbody>
+      <tr>
+        <td><%= text_field_tag '0' %></td>
+        <td><%= text_field_tag '1' %></td>
+        <td><%= text_field_tag '2' %></td>
+        <td><%= text_field_tag '3' %></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <%= submit_tag "Go" %>
+
+<% end %>
+
+<% end %>
